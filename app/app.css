@@ -1,88 +1,6 @@
-body {
-  /*padding: 20px;*/
-}
-
-h1 {
-  border-bottom: 1px solid gray;
-}
-
-/* View: Phone list */
-.phones {
-  list-style: none;
-}
-
-.phones li {
-  clear: both;
-  height: 115px;
-  padding-top: 15px;
-}
 
 h2, h4{
   font-weight: normal;
-}
-
-h2{
-  /*font-size: 4rem;*/
-}
-
-.thumb {
-  float: left;
-  height: 100px;
-  margin: -0.5em 1em 1.5em 0;
-  padding-bottom: 1em;
-  width: 100px;
-}
-
-/* View: Phone detail */
-.phone {
-  background-color: white;
-  border: 1px solid black;
-  float: left;
-  height: 400px;
-  margin-bottom: 2em;
-  margin-right: 3em;
-  padding: 2em;
-  width: 400px;
-}
-
-.phone-thumbs {
-  list-style: none;
-  margin: 0;
-}
-
-.phone-thumbs img {
-  height: 100px;
-  padding: 1em;
-  width: 100px;
-}
-
-.phone-thumbs li {
-  background-color: white;
-  border: 1px solid black;
-  display: inline-block;
-  margin: 1em;
-}
-
-.specs {
-  clear: both;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.specs dt {
-  font-weight: bold;
-}
-
-.specs > li {
-  display: inline-block;
-  vertical-align: top;
-  width: 200px;
-}
-
-.specs > li > span {
-  font-size: 1.2em;
-  font-weight: bold;
 }
 
 table{
@@ -110,46 +28,42 @@ th{
   font-weight: normal;
 }
 
-/*tr:nth-child(odd  ) {background: whitesmoke}*/
-
 #table-wrapper{
   position: relative;
-  /*border: solid 1px black;*/
 }
-
 
 #container{
   width: 100%;
   height: 100vh;
 }
 
-
 table{
   position: absolute;
-  left: calc(20px);
-  width: calc(100% - 40px);
-  right: calc(20px);
-  top: calc(20px);
-  height: calc(100% - 40px);
-  bottom: calc(20px);
-  border-radius: 15px;
+  left: calc(15px);
+  width: calc(100% - 30px);
+  right: calc(15px);
+  top: calc(15px);
+  /*height: calc(100% - 15px);*/
+  /*bottom: calc(15px);*/
+  border-radius: 10px;
+  /*background-color: whitesmoke;*/
+  margin-bottom: 30px;
 }
+
 
 table th:first-child{
-  border-radius: 15px 0 0 0;
+  border-radius: 10px 0 0 0;
 }
-
 
 table th:last-child{
-  border-radius: 0 15px 0 0;
+  border-radius: 0 10px 0 0;
 }
 
-/*
-tfoot{
-  background-color: lavender;
-  height: 50px;
-  padding: 100px;
-  }*/
+#footer-content{
+  overflow: hidden
+}
+
+
 
   #title{
     background-color: black;
@@ -160,7 +74,7 @@ tfoot{
 
   #search-bar{
     background-color: lavender;
-    padding: 10px 0 10px 10px; 
+    padding: 15px 0 15px 15px; 
   }
 
 
@@ -180,14 +94,32 @@ tfoot{
 
   .form-input {
     width: 23%;
-    padding: 5px;
     outline: none;
     border: 0;
     border-radius: 5px;
-    height: 30px;
+    height: 35px;
     padding: 5px 10px 5px 35px;
   }
 
   .icon-addon .glyphicon {
     top: -1px
   }
+
+  .footer{
+    padding: 0;
+    background-color: lavender;
+    /*height: 5px;*/
+    }
+
+    #footer-row{
+      height: 25px;
+      padding: 0
+    }
+
+    #footer-row td:first-child{
+      border-radius: 0 0 0 10px;
+    }
+
+    #footer-row td:last-child{
+      border-radius: 0 0 10px 0;
+    }

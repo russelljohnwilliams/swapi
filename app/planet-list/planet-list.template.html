@@ -2,7 +2,7 @@
 <div id=container>
   <div id="title">
     <h2>STAR WARS API</h2>
-    <h4>Search the planets of your favourite planets</h4>
+    <h4>Discover the planets of your favourite films</h4>
   </div>
   <!--search bar-->
   <div id="search-bar"> 
@@ -34,12 +34,23 @@
           <td>{{planet.rotation_period}}</td>
           <td>{{planet.orbital_period}}</td>
           <td>{{planet.terrain}}</td>
+          <td>{{planet.films[0]}}</td>
+
           <!-- <td ng-repeat="f in planet.films">{{f}}</td> -->
         </tr>
 
       </tbody>
-      <tfoot><tr>ola muthafucker</tr></tfoot>
-      
+      <tfoot >
+      <tr id="footer-row">
+      <td class="footer"></td>
+      <td class="footer"></td>
+      <td class="footer"></td>
+      <td class="footer"></td>
+      <td class="footer"></td>
+      <td class="footer"></td>
+      <td class="footer"></td>
+      </tr>
+      </tfoot>
     </table>
   </div>
 
