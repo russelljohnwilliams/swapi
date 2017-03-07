@@ -20,23 +20,42 @@ component('planetList', {
       self.planets = response.data.results;
       return self.planets
     }).then(function(planets){
-      
-      for ( var i = 0; i < 10; i++ ){
+      for ( var i = 0; i < planets.length; i++ ){
         if (self.planets[i].population !== "unknown"){
-       self.planets[i].population = (parseInt(planets[i].population))
+          self.planets[i].population = (parseInt(planets[i].population))
+        }
+        return self.planets
       }
-    }
-    });
+    }).then(function(planets){
+      for ( var i = 0; i < planets.length; i++ ){
+        self.planets[i].diameter = (parseInt(planets[i].diameter))
+      }
+      return self.planets
+    }).then(function(planets){
+      for ( var i = 0; i < planets.length; i++ ){
+        self.planets[i].rotation_period = (parseInt(planets[i].rotation_period))
+      }
+      return self.planets
+    }).then(function(planets){
+      for ( var i = 0; i < planets.length; i++ ){
+        self.planets[i].orbital_period = (parseInt(planets[i].orbital_period))
+      }
+      return self.planets
+    }).then(function(planets){
+      for ( var i = 0; i < planets.length; i++ ){
+        self.planets[i].terrain = planets[i].terrain.split(',')
+      }
+    })
 
-       
 
-    
 
-    // $http.get($routeParams.planetId.films[0]).then(function(response) {
-    //   console.log("do this worketh now?", $routeParams.planetId)
-    //   thing = response.data;
-    //   console.log(thing)
-    // });
 
-  }]
+
+// $http.get($routeParams.planetId.films[0]).then(function(response) {
+//   console.log("do this worketh now?", $routeParams.planetId)
+//   thing = response.data;
+//   console.log(thing)
+// });
+
+}]
 });
