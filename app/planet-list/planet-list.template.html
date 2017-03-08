@@ -5,12 +5,16 @@
     <h4>Discover the planets of your favourite films</h4>
   </div>
   <!--search bar-->
-  <div id="search-bar"> 
-      <div class="icon-addon">
-        <input class="form-input" type="text" placeholder="search" >
+  <div id="search-bar">
+      <form class="icon-addon" ng-submit="$ctrl.searchPlanet()">
+        <input class="form-input" type="text" placeholder="search">
+        <input type="submit">
         <div class="glyphicon glyphicon-search"></div>
-      </div>
+      </form>
   </div>
+
+  <!-- <button ng-click >push</button> -->
+
   <!--table content-->
   <div id="table-wrapper">
     <table id="table" >
@@ -35,7 +39,6 @@
           <td>{{planet.orbital_period}}</td>
           <td ><div ng-repeat="terrain in planet.terrain">{{terrain}}</div></td>
           <td><div ng-repeat="film in planet.films">{{film}}</div></td>
-
           <!-- <td ng-repeat="f in planet.films">{{f}}</td> -->
         </tr>
 
