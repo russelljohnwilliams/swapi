@@ -11,7 +11,7 @@
 //           template: '<planet-list></planet-list>'
 //         }).
 //         when('/planets/:planetsId', {
-//           template: '<planets-detail></planets-detail>'
+//           template: '<planet></planet>'
 //         }).
 //         otherwise('/planets');
 //     }
