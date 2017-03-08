@@ -41,7 +41,8 @@ component('planetList', {
         self.planets[i].orbital_period = (parseInt(planets[i].orbital_period))
       }
       return self.planets
-    }).then(function(planets){
+    })
+    .then(function(planets){
       for ( var i = 0; i < planets.length; i++ ){
         self.planets[i].terrain = planets[i].terrain.split(',')
       }

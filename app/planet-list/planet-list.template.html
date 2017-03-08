@@ -33,7 +33,7 @@
           <td>{{planet.diameter}}</td>
           <td>{{planet.rotation_period}}</td>
           <td>{{planet.orbital_period}}</td>
-          <td>{{planet.terrain.replace(',','<br>'')}}</td>
+          <td ><div ng-repeat="terrain in planet.terrain">{{terrain}}</div></td>
           <td>{{planet.films[0]}}</td>
 
           <!-- <td ng-repeat="f in planet.films">{{f}}</td> -->
