@@ -16,13 +16,15 @@ component('planetList', {
       self.orderProp = x;
     }
 
-    self.searchPlanet = function(x){
-      // console.log("x", x)
-  // self.url = self.data.next
+    self.searchPlanet = function(){  
+      console.log("poop", self.text)
+
+  self.url = ('http://swapi.co/api/planets/?search=' + self.text)
   self.loadData()
   }
 
   self.loadData = function () {
+  
   // $hhtp call to get the data from the swapi API
   $http.get(self.url).then(function(response) {
     self.data = response.data
@@ -40,19 +42,23 @@ component('planetList', {
     if (self.planets[i].diameter !== "unknown"){
       self.planets[i].diameter = (parseInt(data.diameter))
     }
+    
     // parse the "rotation_period" string into an int
     if (self.planets[i].rotation_period !== "unknown"){
       self.planets[i].rotation_period = (parseInt(data.rotation_period))  
     }
+    
     // parse the "orbital_period" string into an int
     if (self.planets[i].orbital_period !== "unknown"){
       self.planets[i].orbital_period = (parseInt(data.orbital_period))
     }
+    
     // 'split()' the terrain string at every comma, which results in an array of terrain types being created. we can use "ng-repeat" in the HTML template to get each terrain type and display this information on a new line in the table
       self.planets[i].terrain = data.terrain.split(',')
     });
       return self.planets
     }).then(function(planets){
+    
     // loop through the planets and then loop through the array of planets films, then $http.get on each film url to reasign the self.planets film array to be the film.title instead of a URL 
     planets.forEach(function(data, i){
       if (self.planets[i].films.length !== 0){

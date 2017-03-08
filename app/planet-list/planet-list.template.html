@@ -7,8 +7,7 @@
   <!--search bar-->
   <div id="search-bar">
       <form class="icon-addon" ng-submit="$ctrl.searchPlanet()">
-        <input class="form-input" type="text" placeholder="search">
-        <input type="submit">
+        <input class="form-input" type="text" placeholder="search" ng-model="$ctrl.text">
         <div class="glyphicon glyphicon-search"></div>
       </form>
   </div>
