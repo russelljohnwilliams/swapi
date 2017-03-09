@@ -67,6 +67,7 @@ component('planetList', {
               self.planets[i].films[n] = data.title
             })
           })
+          // this can be used to substitute a blank space in the "movie" column to address the fact the planet has not been featured in a movie, yet is still considered to be canon.
         // } else {
         //   self.planets[i].films = ["Not featured in a movie"]
         // }
@@ -96,6 +97,9 @@ component('planetList', {
     }
   }
 
+
+  // ==================== page navigation ====================
+
   self.prevPage = function(){
     if(self.currentPage > 1){
       self.currentPage-=1;
@@ -109,18 +113,7 @@ component('planetList', {
       self.navigate();
      } 
   }      
-  self.changeClass = function(){
-    if (self.currentPage == self.totalPages){
-        self.hideDots = true;
-        self.hideNum = true;
-    }else if ( self.currentPage == self.totalPages -1){
-        self.hideDots = true;  
-    }else if(self.currentPage !== self.totalPages){
-        self.hideDots = false;
-        self.hideNum = false;
-    }
-  }
-
+  
   self.firstPage = function(){
     self.currentPage = 1
     self.navigate();
@@ -136,58 +129,19 @@ component('planetList', {
     self.url = (self.url + "?page=" + self.currentPage);
     self.loadData();
     self.changeClass()
-
   }
 
-  
-
-
-
-  // self.range = function (size,start, end) {
-  //       // if( self.cached == start){
-  //       //     start = start - 4;
-  //       // }
-        
-  //       // self.cached = start;
-          
-  //         var ret = [];        
-                      
-  //         if(size < 2){return ret;}
-          
-  //         if (size < end) {
-  //             end = size;
-  //             start = size-self.gap;
-  //         }
-  //         for (var i = start; i < end; i++) {
-  //             if(i<0) continue;
-  //             ret.push(i);
-  //         }        
-  //         return ret;
-  //     };
-      
-  //     self.setPage = function () {
-  //         if (this.n <= self.currentPage) {
-  //             self.left_gap = self.gap-1;
-  //             self.right_gap = 1;
-  //         } else {            
-  //             self.left_gap = 0;
-  //             self.right_gap = self.gap;
-  //         }
-  //         console.log("bosh", this.n)
-
-  //         self.currentPage = this.n;
-  //   self.loadData();
-
-  //     };
-
-    
-
-
-
-
-
-
-
+  self.changeClass = function(){
+    if (self.currentPage == self.totalPages){
+        self.hideDots = true;
+        self.hideNum = true;
+    }else if ( self.currentPage == self.totalPages -1){
+        self.hideDots = true;  
+    }else if(self.currentPage !== self.totalPages){
+        self.hideDots = false;
+        self.hideNum = false;
+    }
+  }
 
 
 
