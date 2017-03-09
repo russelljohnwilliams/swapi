@@ -1,21 +1,23 @@
-<!--header-->
+
+<!-- header-->
 <div id=container>
   <div id="title">
     <h2>STAR WARS API</h2>
     <h4>Discover the planets of your favourite films</h4>
   </div>
+
   <!--search bar-->
   <div id="search-bar">
-      <form class="icon-addon" ng-submit="$ctrl.searchPlanet()">
-        <input class="form-input" type="text" placeholder="search" ng-model="$ctrl.text">
-        <div class="glyphicon glyphicon-search"></div>
-      </form>
+    <form class="icon-addon" ng-submit="$ctrl.searchPlanets()">
+      <input class="form-input" type="text" placeholder="search" ng-model="$ctrl.text">
+      <div class="glyphicon glyphicon-search"></div>
+    </form>
   </div>
-
 
   <!-- <button ng-click >push</button> -->
 
   <!--table content-->
+
   <div id="table-wrapper">
     <table id="table" >
       <thead>
@@ -37,40 +39,53 @@
           <td>{{planet.diameter}}</td>
           <td>{{planet.rotation_period}}</td>
           <td>{{planet.orbital_period}}</td>
-          <td ><div ng-repeat="terrain in planet.terrain">{{terrain}}</div></td>
-          <td><div ng-repeat="film in planet.films">{{film}}</div></td>
-          <!-- <td ng-repeat="f in planet.films">{{f}}</td> -->
+          <td ><div class="tdDiv text-capitalize" ng-repeat="terrain in planet.terrain">{{terrain}}</div></td>
+          <td><div  class="tdDiv" ng-repeat="film in planet.films">{{film}}</div></td>
         </tr>
 
       </tbody>
       <tfoot >
-      <tr id="footer-row">
-      <td class="footer"></td>
-      <td class="footer"></td>
-      <td class="footer"></td>
-      <td class="footer"></td>
-      <td class="footer"></td>
-      <td class="footer"></td>
-      <td class="footer"></td>
-      </tr>
+        <tr id="footer-row" >
+          <td class="footer"></td>
+          <td class="footer"></td>
+          <td class="footer"></td>
+          <td class="footer"></td>
+          <td class="footer"></td>
+          <td class="footer"></td>
+          <td class="footer"></td>
+        </tr>
       </tfoot>
     </table>
   </div>
 
+  <div class="nav-wrapper" >
 
+    <!-- FIRST PAGE BUTTON -->
+    <button type="button" ng-click="$ctrl.firstPage()" class="nav-buttons">First</button>
 
+    <!-- PREV BUTTON -->
+    <button type="button" ng-click="$ctrl.prevPage()" class="glyphicon glyphicon-triangle-left"></button>
 
+    <!-- HIDDEN '...' -->
+    <div class="nav-buttons" ng-hide="!$ctrl.hideDots" >...</div>
 
-<!-- <ul class="planets">
-<li ng-repeat="planet in $ctrl.planets | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-<a href="#!/planets/{{planet.id}}" class="thumb">
-<img ng-src="{{planet.imageUrl}}" alt="{{planet.name}}" />
-</a>
-<a href="#!/planets/{{planet.planets[0].split('planets/').pop();}}">{{planet.planets[0]}}</a>
-<p>{{planet.climate}}</p>
-</li>
-</ul> -->
+    <!-- HIDDEN PAGE NUMBER -->
+    <button type="button" class="nav-buttons" ng-hide="!$ctrl.hideNum" ng-click="$ctrl.prevPage($sctrl.currentPage)">{{$ctrl.currentPage - 1}}</button>
 
+    <!-- CURRENT PAGE NUMBER -->
+    <button type="button" class="nav-buttons highlight" ng-click="$ctrl.prevPage($sctrl.currentPage)">{{$ctrl.currentPage}}</button>
+
+    <!-- NEXT PAGE NUMBER -->
+    <button type="button" class="nav-buttons" ng-hide="$ctrl.hideNum" ng-click="$ctrl.nextPage($sctrl.currentPage)">{{$ctrl.currentPage + 1}}</button>   
+
+    <!-- VISIBLE '...' -->
+    <div class="nav-buttons" ng-hide="$ctrl.hideDots" >...</div>
+
+    <!-- NEXT BUTTON -->
+    <button type="button" ng-click="$ctrl.nextPage()" class="glyphicon glyphicon-triangle-right"></button>
+
+    <!-- LAST PAGE BUTTON -->
+    <button type="button" ng-click="$ctrl.lastPage()" class="nav">Last</button>
+
+  </div>
 </div>
-
-
