@@ -106,6 +106,7 @@ component('planetList', {
 
   // ==================== page navigation ====================
 
+  // The following code operated the page navigation at the bottom of the table.
 
   self.prevPage = function(){
     if(self.currentPage > 1){
@@ -131,7 +132,7 @@ component('planetList', {
     self.navigate();
   }    
 
-  // each previous navigation sets the 'currentPage' and then calls this function. it resets the URL to default, then gets the URL, concats with "?page=" and the 'currentPage'. it then calls the $http.get with the newly formed URL, and loads up the table with the relevant pages planets.
+  // navigate is called by each previous code, it resets the URL to default, then gets the  newlly reset URL, concatinates it with "?page=" and then the 'currentPage' and reassigns URL. It then calls the $http.get with the newly formed URL, and loads up the table with the relevant pages planets.
   
   self.navigate = function(){
     self.setUrl();
