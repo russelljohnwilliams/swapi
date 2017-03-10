@@ -1,0 +1,63 @@
+{
+    "count": 5, 
+    "next": "http://swapi.co/api/planets/?page=2", 
+    "previous": null, 
+    "results": [
+        {
+            "name": "Alderaan", 
+            "rotation_period": "24", 
+            "orbital_period": "364", 
+            "diameter": "12500", 
+            "terrain": "grasslands, mountains", 
+            "population": "2000000000", 
+            "films": [
+                "http://swapi.co/api/films/6/", 
+                "http://swapi.co/api/films/1/"
+            ], 
+        }, 
+        {
+            "name": "Yavin IV", 
+            "rotation_period": "24", 
+            "orbital_period": "4818", 
+            "diameter": "10200", 
+            "terrain": "jungle, rainforests", 
+            "population": "1000", 
+            "films": [
+                "http://swapi.co/api/films/1/"
+            ], 
+        }, 
+        {
+            "name": "Hoth", 
+            "rotation_period": "23", 
+            "orbital_period": "549", 
+            "diameter": "7200", 
+            "terrain": "tundra, ice caves, mountain ranges", 
+            "films": [
+                "http://swapi.co/api/films/2/"
+            ], 
+        }, 
+        {
+            "name": "Dagobah", 
+            "rotation_period": "23", 
+            "orbital_period": "341", 
+            "diameter": "8900", 
+            "terrain": "swamp, jungles", 
+            "population": "unknown", 
+            "films": [
+                "http://swapi.co/api/films/6/", 
+                "http://swapi.co/api/films/3/", 
+                "http://swapi.co/api/films/2/"
+            ], 
+        }, 
+        {
+            "name": "Bespin", 
+            "rotation_period": "12", 
+            "orbital_period": "5110", 
+            "diameter": "118000", 
+            "terrain": "gas giant", 
+            "films": [
+                "http://swapi.co/api/films/2/"
+            ], 
+        }
+    ]
+}
