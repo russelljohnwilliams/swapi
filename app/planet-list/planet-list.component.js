@@ -6,6 +6,7 @@ component('planetList', {
   templateUrl: 'planet-list/planet-list.template.html',
   controller: ['$http',
   function planetListController($http) {
+    
     var self = this;
     
     self.orderProp = 'index';
@@ -13,10 +14,6 @@ component('planetList', {
     self.data = null;
     self.currentPage = 1;
     self.totalPages =  null ;
-    self.gap = 3;
-    self.right_gap = 2;
-    self.left_gap = 1;
-    self.cached = 0;
     self.hideDots = false;
     self.hideNum = false;
 
@@ -64,13 +61,16 @@ component('planetList', {
             $http.get(film)
             .success(function(data, status, headers, config) {
               self.planets[i].films[n] = data.title
+
+              // tried to add the film titles to a new array, to stop the table from loading the URLs first and then reloading as the film titles. This resulted in only one film being shown at a time.
+
               // self.planets[i].filmTitles = []
               // self.planets[i].filmTitles[n] = data.title 
             })
           })
           // this can be used to substitute a blank space in the "movie" column to address the fact the planet has not been featured in a movie, yet is still considered to be canon.
         // } else {
-        //   self.planets[i].films = ["Not featured in a movie"]
+        //   self.planets[i].films = ["Not featured in a movie."]
         // }
       })
     })
@@ -86,7 +86,7 @@ component('planetList', {
     self.url = 'http://swapi.co/api/planets/'
   }
 
-  // using the searchbar in HTML and ng-submit="$ctrl.searchPlanets(), a user can search any planet in the API and not just the current page. it resets the URL to default, then gets the URL, concats with "?search=" and the text taken from the search bar. it then calls the $http.get with the newly formed URL, and loads up the table with fresh produce.
+  // using the searchbar in HTML and ng-submit="$ctrl.searchPlanets(), a user can search any planet in the API and not just frrom the current page. it resets the URL to default, then gets the URL, concats with "?search=" and the text taken from the search bar. it then calls the $http.get with the newly formed URL, and loads up the table with fresh produce.
 
   self.searchPlanets = function(){
     self.setUrl()
@@ -94,7 +94,7 @@ component('planetList', {
     self.loadData()
   }
   
-  // counts how many pages there are by deviding the planet count and dividing by the amount per page (on page one) and then Math.ceil rounds the number up to a whole, this is used for navigating to the last page.
+  // counts how many pages there are by dividing the planet count by the amount per page (on page one) and then Math.ceil rounds that number up to a whole, this is used for navigating to the last page.
 
   self.countPages = function(){
     if (self.totalPages == null){
@@ -132,7 +132,7 @@ component('planetList', {
     self.navigate();
   }    
 
-  // navigate is called by each previous code, it resets the URL to default, then gets the  newlly reset URL, concatinates it with "?page=" and then the 'currentPage' and reassigns URL. It then calls the $http.get with the newly formed URL, and loads up the table with the relevant pages planets.
+  // navigate is called by each previous code, it resets the URL to default, then gets the newly reset URL, concatinates it with "?page=" and then the 'currentPage' and reassigns the URL with it. It then calls the $http.get with the newly formed URL, and loads up the table with the relevant pages planets.
   
   self.navigate = function(){
     self.setUrl();
@@ -154,9 +154,6 @@ component('planetList', {
         self.hideNum = false;
     }
   }
-
-
-
 
   self.setUrl()
   self.loadData()

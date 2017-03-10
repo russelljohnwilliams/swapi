@@ -1,4 +1,4 @@
-// I have made an attempt to try some tesing of my app using Karma after reading a tutorial on AngularJS, sadly having never been exposed to testing API calls before I have been unsuccesful in making this work correctly. I shall keep trying till I can get it working properly.
+// I have made an attempt to try some tesing of my app using Karma after reading a tutorial on AngularJS, sadly having never been exposed to testing API calls before I have been unsuccesful in making this work correctly. I have tried working from a seed file, and from the API itself but I must be doing something wrong. I shall keep trying.
 
 'use strict';
 

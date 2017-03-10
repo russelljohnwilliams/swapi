@@ -7,7 +7,7 @@ to run this app, simply download or clone from GitHub
 
 https://github.com/russelljohnwilliams/swapi
 
-in terminal cd into the swapi-master folder, from inside the folder type the command
+in terminal 'cd' into the swapi-master folder, from inside the folder type the command
 
 $ npm install 
 
@@ -21,8 +21,8 @@ in terminal you should see information like this.
 
 Starting up http-server, serving ./app
 Available on:
-  http://localhost:8000"
+  http://localhost:8000"   <---- you need this
 
-the localhost should be 8000, but check the above message incase it is different, and substitute 8000 in the next line for the number you have.
+The localhost should be 8000 but please check the above message incase it is different. 
 
-if you direct your browser to localhost:8000/index.html the app should load.
+Direct your browser to localhost:8000/index.html the app should load.

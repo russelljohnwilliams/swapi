@@ -73,7 +73,7 @@
     <button type="button" class="nav-buttons" ng-hide="!$ctrl.hideNum" ng-click="$ctrl.prevPage($sctrl.currentPage)">{{$ctrl.currentPage - 1}}</button>
 
     <!-- CURRENT PAGE NUMBER -->
-    <button type="button" class="nav-buttons highlight" ng-click="$ctrl.prevPage($sctrl.currentPage)">{{$ctrl.currentPage}}</button>
+    <button type="button" class="nav-buttons highlight" >{{$ctrl.currentPage}}</button>
 
     <!-- NEXT PAGE NUMBER -->
     <button type="button" class="nav-buttons" ng-hide="$ctrl.hideNum" ng-click="$ctrl.nextPage($sctrl.currentPage)">{{$ctrl.currentPage + 1}}</button>   
