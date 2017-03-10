@@ -85,8 +85,16 @@ component('planetList', {
   self.setUrl = function(){
     self.url = 'http://swapi.co/api/planets/'
   }
+
+  // using the searchbar in HTML and ng-submit="$ctrl.searchPlanets(), a user can search any planet in the API and not just the current page. it resets the URL to default, then gets the URL, concats with "?search=" and the text taken from the search bar. it then calls the $http.get with the newly formed URL, and loads up the table with fresh produce.
+
+  self.searchPlanets = function(){
+    self.setUrl()
+    self.url = (self.url + "?search=" + self.text)
+    self.loadData()
+  }
   
-  // counts how many pages there are by deviding the planet count and dividing by the amount per page (on page one) and then Math.ceil rounds the number up to a whole, this is used for navigating to the last page
+  // counts how many pages there are by deviding the planet count and dividing by the amount per page (on page one) and then Math.ceil rounds the number up to a whole, this is used for navigating to the last page.
 
   self.countPages = function(){
     if (self.totalPages == null){
@@ -123,7 +131,7 @@ component('planetList', {
     self.navigate();
   }    
 
-  // each previous navigation sets the 'currentPage' and then calls this function. It resets the URL, gets the URL, adds ?page= and then the newly set 'currentPage'. it then reloads the loadData function which places a $http.get on the URL and reloads the table. It then calls 'changeClass' function.
+  // each previous navigation sets the 'currentPage' and then calls this function. it resets the URL to default, then gets the URL, concats with "?page=" and the 'currentPage'. it then calls the $http.get with the newly formed URL, and loads up the table with the relevant pages planets.
   
   self.navigate = function(){
     self.setUrl();
